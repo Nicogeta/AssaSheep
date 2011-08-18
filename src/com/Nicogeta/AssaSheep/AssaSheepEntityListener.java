@@ -28,7 +28,7 @@ public class AssaSheepEntityListener extends EntityListener{
 		if(mobThatJustDied instanceof Sheep) {
 			EntityDamageEvent ldc = mobThatJustDied.getLastDamageCause();
 			DamageCause theCause = ldc.getCause();
-			if(theCause == DamageCause.CONTACT || theCause == DamageCause.ENTITY_ATTACK || theCause == DamageCause.PROJECTILE) {
+			if(theCause == DamageCause.ENTITY_ATTACK || theCause == DamageCause.PROJECTILE) {
 				EntityDamageByEntityEvent event2 = (EntityDamageByEntityEvent)event;
 				Entity e = event2.getDamager();
 				if (e instanceof Player) {
