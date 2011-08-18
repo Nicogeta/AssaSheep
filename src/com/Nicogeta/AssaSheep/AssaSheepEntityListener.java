@@ -46,16 +46,18 @@ public class AssaSheepEntityListener extends EntityListener{
 				} else if (e instanceof Projectile) {
 					Projectile proj = (Projectile)e;
 					if (proj instanceof Arrow) {
-						Player player = (Player)proj.getShooter();
-						int damage = event2.getDamage();
-						LivingEntity mob = (LivingEntity)event.getEntity();
-						int health = mob.getHealth();
-						int life = health - damage;
-						if(life <= 0) {
-							player.getWorld().strikeLightning(player.getLocation());
-							player.getServer().broadcastMessage(ChatColor.RED + "The Big Sheep: " + ChatColor.GREEN + player.getName() + " IS AN ASSASSIN !!!");
-						} else {
-							serv.broadcastMessage(ChatColor.RED + "The Big Sheep: " + ChatColor.GREEN + " Save the sheep, save the player !");
+						if (proj.getShooter() instanceof Player) {
+							Player player = (Player)proj.getShooter();
+							int damage = event2.getDamage();
+							LivingEntity mob = (LivingEntity)event.getEntity();
+							int health = mob.getHealth();
+							int life = health - damage;
+							if(life <= 0) {
+								player.getWorld().strikeLightning(player.getLocation());
+								player.getServer().broadcastMessage(ChatColor.RED + "The Big Sheep: " + ChatColor.GREEN + player.getName() + " IS AN ASSASSIN !!!");
+							} else {
+								serv.broadcastMessage(ChatColor.RED + "The Big Sheep: " + ChatColor.GREEN + " Save the sheep, save the player !");
+							}
 						}
 					} else if (proj instanceof Egg || proj instanceof Snowball) {
 						Player player = (Player)proj.getShooter();
