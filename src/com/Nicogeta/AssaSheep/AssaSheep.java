@@ -16,7 +16,7 @@ public class AssaSheep extends JavaPlugin{
 	public void onEnable() {
 		info = getDescription();
 		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvent(Event.Type.ENTITY_DAMAGE, entityListener, Priority.Normal, this);
+		pm.registerEvent(Event.Type.ENTITY_DAMAGE, entityListener, Priority.Monitor, this);
 		log.info(info.getName() + " ver " + info.getVersion() + " by Nicogeta " + " ENABLED" );
 	}
 
