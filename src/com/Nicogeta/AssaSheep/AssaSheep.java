@@ -26,7 +26,7 @@ public class AssaSheep extends JavaPlugin{
 		log.info(info.getName() + " ver " + info.getVersion() + " by Nicogeta " + " ENABLED" );
 	}
 
-	/*	public void setupMobArenaHandler()
+	/*public void setupMobArenaHandler()
 	{
 		Plugin maPlugin = (MobArena)Bukkit.getServer().getPluginManager().getPlugin("MobArena");
 
